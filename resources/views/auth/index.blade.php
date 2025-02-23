@@ -32,7 +32,7 @@
         </x-form-field>
         <x-form-field class="col-md-6">
           <x-form-label for="phone_number">Phone number</x-form-label>
-          <x-form-input type="text" name="phone_number" class="bg-readonly" id="phone_number" placeholder="111222333" pattern="[0-9]{9}" :value="$insurance->phone_number"/>
+          <x-form-input type="text" name="phone_number" class="bg-readonly" id="phone_number" placeholder="111222333" pattern="[0-9]{9}" :value="$insurance->phone_number" readonly/>
         </x-form-field>
       </div>
 
@@ -40,29 +40,29 @@
       <div class="row mb-4">
         <x-form-field class="col-md-6">
         <x-form-label for="address">Address</x-form-label>
-        <x-form-input type="text" name="address" class="bg-readonly" id="address" placeholder="1234 Main St" minlength="3" pattern="[a-zA-Z0-9\s]{3,91}" :value="$insurance->address" />
+        <x-form-input type="text" name="address" class="bg-readonly" id="address" placeholder="1234 Main St" minlength="3" pattern="[a-zA-Z0-9\s]{3,91}" :value="$insurance->address" readonly />
         </x-form-field>
 
         <x-form-field class="col-md-4">
           <x-form-label for="city">City</x-form-label>
-          <x-form-input type="text" name="city" class="bg-readonly" id="city" placeholder="Prague" minlength="3" pattern="[a-zA-Z]{3,33}" :value="$insurance->city" />
+          <x-form-input type="text" name="city" class="bg-readonly" id="city" placeholder="Prague" minlength="3" pattern="[a-zA-Z]{3,33}" :value="$insurance->city" readonly />
         </x-form-field>
 
         <x-form-field class="col-md-2">
           <x-form-label for="zip">Zip</x-form-label>
-          <x-form-input type="text" name="zip" class="bg-readonly" id="zip" placeholder="111 11" minlength="5" maxlength="5" pattern="[0-9]{5}" :value="$insurance->zip" />
+          <x-form-input type="text" name="zip" class="bg-readonly" id="zip" placeholder="111 11" minlength="5" maxlength="5" pattern="[0-9]{5}" :value="$insurance->zip" readonly />
         </x-form-field>
       </div>
 
       <div class="row mb-4">
         <x-form-field class="col-md-6">
           <x-form-label for="identification_number">Identification number</x-form-label>
-          <x-form-input type="text" name="identification_number" class="bg-readonly" id="identification_number" placeholder="ID card number" minlength="10" maxlength="10" pattern="[0-9]{10}" :value="$insurance->identification_number" />
+          <x-form-input type="text" name="identification_number" class="bg-readonly" id="identification_number" placeholder="ID card number" minlength="10" maxlength="10" pattern="[0-9]{10}" :value="$insurance->identification_number" readonly />
         </x-form-field>
 
         <x-form-field class="col-md-6">
           <x-form-label for="has_spouse">Married</x-form-label>
-          <x-form-input type="text" name="identification_number" class="bg-readonly" id="identification_number" placeholder="ID card number" minlength="10" maxlength="10" pattern="[0-9]{10}" :value="$insurance->has_spouse == 0 ? 'No' : 'Yes'" />
+          <x-form-input type="text" name="identification_number" class="bg-readonly" id="identification_number" placeholder="ID card number" minlength="10" maxlength="10" pattern="[0-9]{10}" :value="$insurance->has_spouse == 0 ? 'No' : 'Yes'" readonly />
         </x-form-field>
       </div>
 
