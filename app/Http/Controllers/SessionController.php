@@ -63,6 +63,13 @@ class SessionController extends Controller
         return redirect('/account');
     }
 
+    public function destroy($id) {
+        $insurances = Client::findOrFail($id);
+        $insurances->delete();
+
+        return redirect('/account');
+    }
+
     public function logout() {
         Auth::logout();
         return redirect('/');

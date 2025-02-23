@@ -35,3 +35,4 @@ Route::post('/logout', [SessionController::class, 'logout'])->middleware('auth')
 
 Route::get('/account/{id}/edit', [SessionController::class, 'edit'])->middleware('auth');
 Route::patch('/account/{id}', [SessionController::class,'update'])->middleware('auth');
+Route::delete('/account/{id}', [SessionController::class, 'destroy'])->middleware('auth');
