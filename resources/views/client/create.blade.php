@@ -71,7 +71,7 @@
         <option selected disabled value="">Choose...</option>
         <option value="1">Yes</option>
         <option value="0">No</option>
-      </x-form-select>
+    </x-form-select>
   </x-form-field>
 
   <x-form-field class="mb-5">

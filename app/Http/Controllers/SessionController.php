@@ -36,6 +36,33 @@ class SessionController extends Controller
      return view('auth.index', compact('insurances'));
     }
 
+    public function edit($id) {
+        $insurance = Client::find($id);
+
+        return view('auth.edit', compact(['insurance']));
+    }
+
+    public function update(Request $request) {
+        $attributes = $request->validate([
+            'first_name' => ['required', 'min:3', 'max:50'],
+            'last_name' => ['required', 'min:3', 'max:50'],
+            'address' => ['required', 'min:3', 'max:91'],
+            'city' => ['required', 'min:3', 'max:33'],
+            'zip' => ['required', 'min:5', 'max:5'],
+            'email' => ['required', 'email'],
+            'phone_number' => ['required', 'numeric'],
+            'identification_number'=> ['required','numeric'],
+            'has_spouse' => ['required', 'boolean'],
+        ]);
+
+        $insurances = Client::where('user_id', Auth::user()->id)->get();
+        foreach( $insurances as $insurance ) {
+            $insurance->update($attributes);
+        }
+
+        return redirect('/account');
+    }
+
     public function logout() {
         Auth::logout();
         return redirect('/');

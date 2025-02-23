@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Models\Client;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', function () {
@@ -31,3 +32,6 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
 Route::get('/account', [SessionController::class, 'show'])->middleware('auth');
 Route::post('/logout', [SessionController::class, 'logout'])->middleware('auth');
+
+Route::get('/account/{id}/edit', [SessionController::class, 'edit'])->middleware('auth');
+Route::patch('/account/{id}', [SessionController::class,'update'])->middleware('auth');
